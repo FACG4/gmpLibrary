@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+{{>head}}
+</head>
+<body dir="rtl">
+    {{#unless normal}}
+      <header class="header">
+        {{>header}}
+      </header>
+    {{/unless}}
+    <section >
+      {{{body}}}
+    </section>
+    {{#unless normal}}
+      <footer class="footer">
+        {{>footer}}
+      </footer>
+    {{/unless}}
+</body>
+
+{{#if swal}}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+{{/if}}
+{{#if jsFile}}
+{{#each jsFile}}
+<script type="text/javascript" src="/js/{{this}}.js">
+{{/each}}
+{{/if}}
+</script>
+</html>
